@@ -35,3 +35,19 @@ jobs:
         with:
           name: playwright-report
           path: playwright-report
+
+      - name: Send Slack notification
+        if: always()
+        run: |
+          $status = "${{ job.status }}"
+          $runUrl = "https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }}"
+
+          $payload = @{
+            text = "Playwright Test Execution Completed`nStatus: $status`nReport: $runUrl"
+          } | ConvertTo-Json -Depth 10
+
+          Invoke-RestMethod `
+            -Uri "${{ secrets.SLACK_WEBHOOK_URL }}" `
+            -Method Post `
+            -Body $payload `
+            -ContentType "application/json"
