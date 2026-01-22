@@ -41,6 +41,7 @@ test.describe("Login Tests", () => {
 
     test("Invalid credentials should show error", async ({ page, LoginData }) => {
         const login = new LoginAction(page);
+        
         const user = LoginData.invalidCredentials;
 
         await login.loginUser(user.userName, user.password);
