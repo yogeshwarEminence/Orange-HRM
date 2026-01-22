@@ -2,7 +2,7 @@ name: Playwright Test Run (Windows)
 
 on:
   schedule:
-    - cron: "*/5 * * * *"
+    - cron: "* * * * *"
   workflow_dispatch:
 
 jobs:
@@ -26,6 +26,3 @@ jobs:
 
       - name: Run Playwright tests
         run: npx playwright test
-
-
-        
