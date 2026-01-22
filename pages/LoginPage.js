@@ -17,5 +17,7 @@ export class LoginPage extends BasePage {
     async clickLoginButton() {
         await this.click("button[type='submit']")
     }
+
+    
     
 }
