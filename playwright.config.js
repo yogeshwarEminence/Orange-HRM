@@ -8,7 +8,7 @@ export default defineConfig({
     forbidOnly: !!process.env.CI,
     retries: 2,
     workers: 2,
-    reporter: 'html',
+    reporter: [['html'], ['github']],
 
     use: {
         headless: false,
