@@ -18,5 +18,4 @@ export class LoginPage extends BasePage {
         await this.click("button[type='submit']")
     }
     
-
 }
