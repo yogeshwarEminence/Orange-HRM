@@ -48,7 +48,7 @@ test.describe("Login Tests", () => {
 
         await page.waitForURL(LoginData.validLogin.URL, { timeout: 10000 });
 
-        await expect(page.getByText('Invalid credentials', { exact: true })).toBeVisible({ timeout: 10000 });
+        await expect(page.getByText('Invalid credential', { exact: true })).toBeVisible({ timeout: 10000 });
 
     });
 
