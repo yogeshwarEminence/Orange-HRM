@@ -41,14 +41,14 @@ test.describe("Login Tests", () => {
 
     test("Invalid credentials should show error", async ({ page, LoginData }) => {
         const login = new LoginAction(page);
-
+        
         const user = LoginData.invalidCredentials;
 
         await login.loginUser(user.userName, user.password);
 
         await page.waitForURL(LoginData.validLogin.URL, { timeout: 10000 });
 
-        await expect(page.getByText('Invalid credentials', { exact: true })).toBeVisible({ timeout: 10000 });
+        await expect(page.getByText('Invalid credential', { exact: true })).toBeVisible({ timeout: 10000 });
 
     });
 
